@@ -1,7 +1,9 @@
 @extends('layouts.app')
 
 @section('title', 'Accueil')
-
+@section('styles')
+    @vite('resources/css/home.css')
+@endsection
 @section('content')
 
         <section class="hero wishflix-hero" aria-labelledby="hero-title">

@@ -1,7 +1,9 @@
 @extends('layouts.app')
 
 @section('title', $game['title'])
-
+@section('styles')
+    @vite('resources/css/game-detail.css')
+@endsection
 @section('content')
         <section class="wish-detail">
           <figure class="wish-detail__backdrop">
