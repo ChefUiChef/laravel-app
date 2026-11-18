@@ -32,16 +32,14 @@ localhost:8080/up affiche "Application up, HTTP request received. Response rende
 
 # Palier 3 : Raisonner (expliquer un choix du framework)
 
-9.
-
-app/Models/ contient un seul modèle. Lequel ? À quelle table de la base correspond-il ? Comment Laravel fait-il le lien entre le nom de la classe et le nom de la table ?
+9.app/Models/ contient un seul modèle. Lequel ? À quelle table de la base correspond-il ? Comment Laravel fait-il le lien entre le nom de la classe et le nom de la table ?
 
 10.  app/Http/Controllers/ contient un fichier. Est-il utilisé par la route / ? Si non, comment la route produit-elle quand même une réponse ?
 
 11.  Ouvrez .gitignore. Pourquoi .env y figure-t-il alors que .env.example n'y figure pas ? Pourquoi vendor/ y figure-t-il ? Quelle commande un collègue devra-t-il lancer après avoir cloné votre dépôt pour reconstituer ce dossier ?
 12.  Le dossier public/ est le seul exposé au serveur web. Quel problème de sécurité cela évite-t-il par rapport à un projet PHP « from scratch » où tous les fichiers sont à la racine du site ?
 
-# Exercice 02 :
+# Exercice 2
 
 1. La ligne $game['title'] est devenu $game->title
 2. @forelse est devenu @foreach
