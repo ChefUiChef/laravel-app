@@ -12,6 +12,7 @@ export default defineConfig({
         'resources/css/home.css',
         'resources/css/game-detail.css',
         'resources/css/404.css',
+        'resources/css/wishlist.css',
     ],
 
             refresh: true,
@@ -28,5 +29,5 @@ export default defineConfig({
             ignored: ['**/storage/framework/views/**'],
         },
     },
-    
+
 });
