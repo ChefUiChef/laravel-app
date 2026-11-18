@@ -49,9 +49,9 @@ class GameController extends Controller
     }
 
     public function show(int $id)
-    {
-        abort_unless(isset($this->games[$id]), 404);
+{
+    abort_unless(isset($this->games[$id]), 404);
 
-        return view('game-detail', ['game' => $this->games[$id], 'id' => $id]);
-    }
+    return view('game-detail', ['game' => $this->games[$id], 'id' => $id]);
+}
 }

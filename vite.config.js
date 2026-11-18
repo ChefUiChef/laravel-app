@@ -11,6 +11,7 @@ export default defineConfig({
         'resources/js/app.js',
         'resources/css/home.css',
         'resources/css/game-detail.css',
+        'resources/css/404.css',
     ],
 
             refresh: true,
