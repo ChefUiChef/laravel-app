@@ -1,14 +1,17 @@
 @extends('layouts.app')
 
 @section('title', $game->title)
+
 @section('styles')
     @vite('resources/css/game-detail.css')
 @endsection
+
 @section('content')
         <section class="wish-detail">
           <figure class="wish-detail__backdrop">
             <img
-              src="{{ str_replace(['w=300', 'h=450'], ['w=1600', 'h=900'], $game->cover_url) }}"              alt="Image de couverture de {{ $game->title }}"
+              src="{{ str_replace(['w=300', 'h=450'], ['w=1600', 'h=900'], $game->cover_url) }}"
+              alt="Image de couverture de {{ $game->title }}"
               width="1600"
               height="900"
             />
@@ -43,15 +46,21 @@
               </li>
               <li>
                 <strong>Etat:</strong>
-                {{  $game->status }}
+                {{ $game->status }}
+              </li>
+              <li>
+                <strong>Plateformes:</strong>
+                @forelse ($game->platforms as $platform)
+                  {{ $platform->name }}@if (! $loop->last), @endif
+                @empty
+                  Non renseigné
+                @endforelse
               </li>
             </ul>
 
             <div class="wish-detail__actions">
               <button class="btn btn-secondary">Ajouter a la wishlist</button>
-              <a class="btn btn-outline" href="wishlist.html"
-                >Voir ma wishlist</a
-              >
+              <a class="btn btn-outline" href="{{ route('wishlist') }}">Voir ma wishlist</a>
             </div>
           </div>
         </section>

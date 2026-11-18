@@ -99,5 +99,23 @@ class GameSeeder extends Seeder
                 Platform::whereIn('name', $platformNames)->pluck('id')->all()
             );
         }
+       $platforms = Platform::all();
+
+        Game::factory()
+            ->count(14)
+            ->recycle(Category::all())
+            ->create()
+            ->each(fn ($game) => $game->platforms()->attach(
+                $platforms->random(rand(1, 3))->pluck('id')
+            ));
+
+        $featured = Game::factory()
+            ->featured()
+            ->recycle(Category::all())
+            ->create();
+
+        $featured->platforms()->attach(
+            $platforms->random(rand(1, 3))->pluck('id')
+        );
     }
 }
