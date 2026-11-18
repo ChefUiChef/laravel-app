@@ -1,45 +1,8 @@
-<!doctype html>
-<html lang="fr">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>WishFlix - The Witcher 3</title>
-    <link
-      href="https://cdn.jsdelivr.net/npm/daisyui@5"
-      rel="stylesheet"
-      type="text/css"
-    />
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-  </head>
-  <body>
-    <div class="wishflix-shell">
-      <header
-        class="navbar wishflix-shell__navbar"
-        aria-label="Navigation principale"
-      >
-        <div class="navbar-start">
-          <a class="wishflix-shell__brand" href="/">WishFlix</a>
-          <span class="wishflix-shell__tagline">Gaming catalog</span>
-        </div>
+@extends('layouts.app')
 
-        <nav
-          class="navbar-center wishflix-shell__menu"
-          aria-label="Liens principaux"
-        >
-          <a class="wishflix-shell__link" href="/"> Accueil </a>
-          <a class="wishflix-shell__link" href="wishlist.html">
-            Wishlist
-            <span class="badge badge-secondary badge-sm">3</span>
-          </a>
-        </nav>
+@section('title', $game['title'])
 
-        <div class="navbar-end wishflix-shell__user">
-          <span class="wishflix-shell__user-label">Invité</span>
-          <a class="btn btn-primary btn-sm" href="login.html">Se connecter</a>
-        </div>
-      </header>
-
-      <main class="wishflix-main" id="contenu-principal">
+@section('content')
         <section class="wish-detail">
           <figure class="wish-detail__backdrop">
             <img
@@ -90,11 +53,4 @@
             </div>
           </div>
         </section>
-      </main>
-
-      <footer class="wishflix-footer" aria-label="Pied de page">
-        <p class="wishflix-footer__text">WishFlix - Gaming Catalog</p>
-      </footer>
-    </div>
-  </body>
-</html>
+@endsection
