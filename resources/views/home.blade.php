@@ -5,7 +5,7 @@
     @vite('resources/css/home.css')
 @endsection
 @section('content')
-
+      @if ($featured)
         <section class="hero wishflix-hero" aria-labelledby="hero-title">
           <figure class="wishflix-hero__backdrop">
             <img
@@ -19,35 +19,33 @@
 
           <div class="hero-content wishflix-hero__content">
             <div class="wishflix-hero__text">
-              <p class="wishflix-hero__kicker">Nouveaute WishFlix</p>
+              <p class="wishflix-hero__kicker">Nouveauté WishFlix</p>
               <div class="wishflix-hero__meta">
                 <span class="badge badge-primary">A la une</span>
-                <span class="badge badge-ghost">RPG</span>
-                <span class="badge badge-outline">PC, PS5, Xbox</span>
+                <span class="badge badge-ghost">{{$featured->category->name}}</span>
+                <span class="badge badge-outline">{{$featured->platforms->pluck('name')->join(', ') }}</span>
               </div>
 
               <h1 id="hero-title" class="wishflix-hero__title">
-                The Witcher 3
+                {{$featured->title}}
               </h1>
               <p class="wishflix-hero__description">
-                Incarnez Geralt de Riv, un chasseur de monstres professionnel,
-                dans un monde ouvert fantastique rempli de quêtes épiques et de
-                choix moraux difficiles.
+                {{$featured->synopsis}}
               </p>
-              <p class="wishflix-hero__details">2015 | 4.8/5 | 100h de jeu</p>
+              <p class="wishflix-hero__details">{{$featured->release_year}} | {{$featured->rating}}/5 | {{$featured->playtime_hours}}h de jeu</p>
 
               <div class="wishflix-hero__actions">
-                <a class="btn btn-primary btn-lg" href="game-detail.html"
+                <a class="btn btn-primary btn-lg" href="game/{{$featured->id}}"
                   >Voir la fiche</a
                 >
                 <button class="btn btn-outline btn-lg">
-                  Ajouter a la wishlist
+                  Ajouter à la wishlist
                 </button>
               </div>
             </div>
           </div>
         </section>
-
+      @endif
         <section class="wish-section" aria-labelledby="catalogue-title">
           <header class="wish-section__header">
             <div>
